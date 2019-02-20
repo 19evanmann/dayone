@@ -2,35 +2,6 @@ import turtle
 t = turtle.Pen()
 t.speed(100)
 
-
-            
-def circle():
-    global siz_e
-    for x in range (siz_e):
-        t.width(3)
-        t.speed(300)
-        t.forward(1)
-        t.left(1)
-
-def left_spiral():
-    global siz_e
-    for x in range (siz_e):
-        t.forward(x)
-        t.left(91)
-
-def right_spiral():
-    global siz_e
-    for x in range (siz_e):
-        t.forward(x)
-        t.right(91)
-
-def something():
-    global siz_e
-    for x in range (siz_e):
-        t.forward(x)
-        t.right(45)
-        t.width(3)
-
 def pen_color():
     colou_r = input("""What color would you like to draw with?
                  Red:1
@@ -47,12 +18,52 @@ def pen_color():
     elif colou_r == "4":
         t.pencolor("Medium Orchid")
 
+
+
 def shape_size():
-    siz_e = input("How big would you like your shape?")
-            
-while True:
+    global siz_e
+    siz_e = int(input("How big would you like your shape?"))
+
+
+                        
+def circle():
+    global siz_e
     pen_color()
     shape_size()
+    for x in range (siz_e):
+        t.width(3)
+        t.speed(300)
+        t.forward(1)
+        t.left(1)
+
+def left_spiral():
+    global siz_e
+    pen_color()
+    shape_size()
+    for x in range (siz_e):
+        t.forward(x)
+        t.left(91)
+
+def right_spiral():
+    pen_color()
+    shape_size()
+    global siz_e
+    for x in range (siz_e):
+        t.forward(x)
+        t.right(91)
+
+def something():
+    global siz_e
+    pen_color()
+    shape_size()
+    for x in range (siz_e):
+        t.forward(x)
+        t.right(45)
+        t.width(3)
+
+
+
+while True:
     instruction = input("""What do you want to draw?
                         1: Left spiral
                         2: Right spiral
@@ -67,4 +78,6 @@ while True:
         circle()
     elif instruction == "4":
         something()
+
+
 
