@@ -1,3 +1,7 @@
+#making this code I had several errors between integers and definitions
+#I was helped to realize I was calling functions two different ways which confused the computer
+
+#identifying and start-up
 import turtle
 t = turtle.Pen()
 t.speed(100)
@@ -24,7 +28,7 @@ def shape_size():
     global siz_e
     siz_e = int(input("How big would you like your shape?"))
 
-
+#defining shapes
                         
 def circle():
     global siz_e
@@ -61,7 +65,7 @@ def something():
         t.right(45)
         t.width(3)
 
-
+#loop that calls all definitions
 
 while True:
     instruction = input("""What do you want to draw?
