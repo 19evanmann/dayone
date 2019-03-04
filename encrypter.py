@@ -18,7 +18,7 @@ secret_m = input("What would you like your message to be?")
 for char in secret_m:
     if char in "  ?,.!?:;":
         secret_m = secret_m.replace(char, '')
-shift_v = input("How many letters whould you like to shift your encryption?")
+shift_v = int(input("How many letters whould you like to shift your encryption?"))
 
 #make a dictionary of values
 dic = {"a":1,
@@ -51,12 +51,11 @@ dic = {"a":1,
 
 output_message = [dic.get(n, n) for n in secret_m.lower()]
 arrayed_message = numpy.array(output_message)
-shifted_output = arrayed_message + 3
+shifted_output = arrayed_message + shift_v
 print(output_message)
 print(shifted_output)
 
 
 
 #print(secret_m)
-
 
