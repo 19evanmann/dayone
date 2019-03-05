@@ -12,7 +12,7 @@
 import numpy
 import tkinter
 
-letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "zg", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 secret_m = input("What would you like your message to be?")
 for char in secret_m:
@@ -46,16 +46,50 @@ dic = {"a":1,
        "w":23,
        "x":24,
        "y":25,
-       "z":26
+       "z":26,
+       }
+dic_2 = {1:"a",
+       2:"b",
+       3:"c",
+       4:"d",
+       5:"e",
+       6:"f",
+       7:"g",
+       8:"h",
+       9:"i",
+       10:"j",
+       11:"k",
+       12:"l",
+       13:"m",
+       14:"n",
+       15:"o",
+       16:"p",
+       17:"q",
+       18:"r",
+       19:"s",
+       20:"t",
+       21:"u",
+       22:"v",
+       23:"w",
+       24:"x",
+       25:"y",
+       26:"z",
        }
 
 output_message = [dic.get(n, n) for n in secret_m.lower()]
+
 arrayed_message = numpy.array(output_message)
+
 shifted_output = arrayed_message + shift_v
+
 print(output_message)
 print(shifted_output)
 
 
+letter_message = [dic_2.get(n, n) for n in shifted_output]
+
+encrypt = numpy.array(letter_message)
+
+print(letter_message)
 
 #print(secret_m)
-
