@@ -20,6 +20,13 @@ for char in secret_m:
         secret_m = secret_m.replace(char, '')
 shift_v = int(input("How many letters whould you like to shift your encryption?"))
 
+def shrunk():
+    global shift_v
+    if shift_v > 26:
+        shift_v = shift_v - 26
+        shrunk()
+
+shrunk()
 #make a dictionary of values
 dic = {"a":1,
        "b":2,
@@ -84,7 +91,6 @@ shifted_output = arrayed_message + shift_v
 
 print(output_message)
 print(shifted_output)
-
 
 letter_message = [dic_2.get(n, n) for n in shifted_output]
 
