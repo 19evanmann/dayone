@@ -12,21 +12,24 @@
 import numpy
 import tkinter
 
-letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "zg", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-secret_m = input("What would you like your message to be?")
-for char in secret_m:
-    if char in "  ?,.!?:;":
-        secret_m = secret_m.replace(char, '')
-shift_v = int(input("How many letters whould you like to shift your encryption?"))
-
 def shrunk():
     global shift_v
     if shift_v > 26:
         shift_v = shift_v - 26
         shrunk()
+    elif shift_v == 26:
+        print("try a better code")
+
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "zg", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+secret_m = input("What would you like your message to be?")
+for char in secret_m:
+    if char in " ?,.!?:;":
+        secret_m = secret_m.replace(char, '')
+shift_v = int(input("How many letters whould you like to shift your encryption?"))
 
 shrunk()
+
 #make a dictionary of values
 dic = {"a":1,
        "b":2,
@@ -81,7 +84,32 @@ dic_2 = {1:"a",
        24:"x",
        25:"y",
        26:"z",
-       }
+       27:"a",
+       28:"b",
+       29:"c",
+       30:"d",
+       31:"e",
+       32:"f",
+       33:"g",
+       34:"h",
+       35:"i",
+       36:"j",
+       37:"k",
+       38:"l",
+       39:"m",
+       40:"n",
+       41:"o",
+       42:"p",
+       43:"q",
+       44:"r",
+       45:"s",
+       46:"t",
+       47:"u",
+       48:"v",
+       49:"w",
+       50:"x",
+       51:"y",
+       52:"z",}
 
 output_message = [dic.get(n, n) for n in secret_m.lower()]
 
@@ -99,3 +127,4 @@ encrypt = numpy.array(letter_message)
 print(letter_message)
 
 #print(secret_m)
+
