@@ -117,12 +117,15 @@ arrayed_message = numpy.array(output_message)
 
 shifted_output = arrayed_message + shift_v
 
-print(output_message)
-print(shifted_output)
+#Optional#
+#print(output_message)
+#print(shifted_output)
 
 letter_message = [dic_2.get(n, n) for n in shifted_output]
 
 encrypt = numpy.array(letter_message)
+
+letter_message = "".join(letter_message)
 
 print(letter_message)
 
