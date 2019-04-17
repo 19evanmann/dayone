@@ -1,2 +1,0 @@
-howdy = input("How long is the tallest sapling in the forest?"):
-  print(howdy)
